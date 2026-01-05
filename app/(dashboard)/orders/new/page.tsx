@@ -3,7 +3,7 @@ import { getProducts } from "@/actions/product";
 
 export default async function NewOrderPage() {
     const rawProducts = await getProducts();
-    const products = rawProducts.map(p => ({
+    const products = rawProducts.map((p: any) => ({
         ...p,
         price: Number(p.price)
     }));

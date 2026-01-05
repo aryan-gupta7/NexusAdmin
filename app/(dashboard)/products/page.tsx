@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function ProductsPage() {
     const rawProducts = await getProducts();
-    const products = rawProducts.map(p => ({
+    const products = rawProducts.map((p: any) => ({
         ...p,
         price: Number(p.price)
     }));
