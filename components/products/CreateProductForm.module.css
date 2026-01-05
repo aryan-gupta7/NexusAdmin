@@ -1,0 +1,231 @@
+.formCard {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.step {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.stepActive {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background: var(--border-glass);
+    margin: 0 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.stepContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.textareaWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.textarea:focus {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(176, 38, 255, 0.3);
+}
+
+.glowLine {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.textarea:focus~.glowLine {
+    width: 100%;
+}
+
+.error {
+    font-size: 0.75rem;
+    color: #ff0055;
+}
+
+.nextBtn {
+    align-self: flex-end;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.uploadArea {
+    border: 2px dashed var(--border-glass);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.uploadArea:hover,
+.dragActive {
+    border-color: var(--primary);
+    background: rgba(176, 38, 255, 0.05);
+    color: #fff;
+}
+
+.uploadIcon {
+    color: var(--primary);
+}
+
+.subtext {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.previews {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.previewContainer {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+}
+
+.previewImage {
+    object-fit: cover;
+}
+
+.removeBtn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.removeBtn:hover {
+    background: #ff0055;
+}
+
+.serverError {
+    background: rgba(255, 0, 85, 0.1);
+    color: #ff0055;
+    padding: 0.75rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.magicBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary-glow);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.magicBtn:hover:not(:disabled) {
+    background: var(--primary);
+    color: #fff;
+}
+
+.magicBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nexus-admin-web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      # Database URL is likely needed if you are running a real DB. 
+      # Since we are using SQLite for dev, this might need adjustment for production 
+      # or mounting the sqlite file relative to the container.
+      # For a real PG setup, you would add a db service here.
+    volumes:
+      # Mount the sqlite db for persistence if stick with sqlite
+      - ./prisma:/app/prisma
