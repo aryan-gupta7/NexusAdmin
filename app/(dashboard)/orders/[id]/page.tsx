@@ -58,7 +58,7 @@ export default async function OrderDetailsPage({ params }: { params: Promise<{ i
                 <GlassCard className={styles.mainCard}>
                     <h2 className={styles.cardTitle}>Order Items</h2>
                     <div className={styles.itemsList}>
-                        {order.items.map((item) => (
+                        {order.items.map((item: any) => (
                             <div key={item.id} className={styles.itemRow}>
                                 <div className={styles.itemInfo}>
                                     <div className={styles.itemIcon}>
